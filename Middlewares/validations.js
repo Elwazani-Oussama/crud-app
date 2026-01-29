@@ -48,6 +48,38 @@ export const Validations = {
         .withMessage('Enroll number is required')
         .isInt()
         .withMessage('Enroll number must be an integer'),
+    ],
+    updateStudent : [
+        // firstName
+        check('firstName')
+        .notEmpty()
+        .withMessage('First name is required')
+        .isLength({ min: 3 })
+        .withMessage('First name must be at least 3 characters long'),
+        // lastName
+        check('lastName')
+        .notEmpty()
+        .withMessage('Last name is required')
+        .isLength({ min: 3 })
+        .withMessage('Last name must be at least 3 characters long'),
+        // email
+        check('email')
+        .notEmpty()
+        .withMessage('Email is required')
+        .isEmail()
+        .withMessage('Invalid email'),
+        // phoneNumber
+        check('phoneNumber')
+        .notEmpty()
+        .withMessage('Phone number is required')
+        .isLength({ min: 10 })
+        .withMessage('phone number must be at least 10 characters long'),
+        // enrollNumber
+        check('enrollNumber')
+        .notEmpty()
+        .withMessage('Enroll number is required')
+        .isInt()
+        .withMessage('Enroll number must be an integer'),
     ]
 }
 
